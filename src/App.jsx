@@ -25,11 +25,10 @@ export default function App() {
         <OrbErrorBoundary>
           <Suspense fallback={null}>
             <Orb
-              hue={-18}
-              hoverIntensity={0.35}
-              rotateOnHover={false}
-              forceHoverState
-              backgroundColor="#05060c"
+              hue={8}
+              hoverIntensity={0.7}
+              rotateOnHover
+              backgroundColor="#ffffff"
             />
           </Suspense>
         </OrbErrorBoundary>
