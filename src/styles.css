@@ -1,0 +1,128 @@
+:root {
+  color: #f7f4ee;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: geometricPrecision;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: #05060c;
+  margin: 0;
+  min-width: 320px;
+}
+
+.coming-soon {
+  align-items: center;
+  background:
+    radial-gradient(circle at 75% 18%, rgba(255, 122, 89, 0.18), transparent 26rem),
+    linear-gradient(135deg, #05060c 0%, #0d1020 47%, #070814 100%);
+  display: grid;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: clamp(2rem, 5vw, 5rem);
+  place-items: center;
+  position: relative;
+}
+
+.coming-soon::after {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 4.5rem 4.5rem;
+  content: "";
+  inset: 0;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
+  opacity: 0.18;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.orb-stage {
+  aspect-ratio: 1;
+  filter: saturate(1.18) contrast(1.08);
+  height: min(88vmin, 58rem);
+  left: 50%;
+  opacity: 0.96;
+  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -48%);
+  width: min(88vmin, 58rem);
+  z-index: -1;
+}
+
+.orb-stage::before {
+  background: radial-gradient(circle, transparent 0 35%, rgba(5, 6, 12, 0.16) 59%, #05060c 76%);
+  content: "";
+  inset: -12%;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.copy {
+  max-width: 58rem;
+  text-align: center;
+  transform: translateY(1.2rem);
+}
+
+.eyebrow {
+  color: rgba(247, 244, 238, 0.72);
+  font-size: clamp(0.82rem, 1.5vw, 0.96rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #fffaf2;
+  font-size: clamp(4.2rem, 16vw, 12.5rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.84;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.promise {
+  color: rgba(247, 244, 238, 0.86);
+  font-size: clamp(1.15rem, 2.6vw, 2.3rem);
+  font-weight: 500;
+  line-height: 1.18;
+  margin: clamp(1.4rem, 3vw, 2.2rem) auto 0;
+  max-width: 46rem;
+  text-wrap: balance;
+}
+
+@media (max-width: 620px) {
+  .coming-soon {
+    padding: 2rem 1.25rem;
+  }
+
+  .orb-stage {
+    height: 128vmin;
+    opacity: 0.82;
+    transform: translate(-50%, -53%);
+    width: 128vmin;
+  }
+
+  .copy {
+    transform: none;
+  }
+}
