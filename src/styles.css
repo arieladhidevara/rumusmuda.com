@@ -1,12 +1,12 @@
 :root {
-  background: #ffffff;
-  color: #16120f;
+  background: #06070c;
+  color: #eef2fb;
   font-family:
-    "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino,
-    Georgia, serif;
+    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-synthesis: none;
   line-height: 1.5;
   text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
 }
 
 * {
@@ -20,14 +20,14 @@ body,
 }
 
 body {
-  background: #ffffff;
+  background: #06070c;
   margin: 0;
   min-width: 320px;
 }
 
 .coming-soon {
   align-items: center;
-  background: #ffffff;
+  background: radial-gradient(120% 120% at 50% 50%, #0d1018 0%, #08090f 60%, #050609 100%);
   display: grid;
   justify-content: center;
   min-height: 100svh;
@@ -38,14 +38,10 @@ body {
 }
 
 .magic-rings-stage {
-  height: min(720px, 76vmin);
-  left: 50%;
-  opacity: 0.88;
+  inset: 0;
+  opacity: 1;
   pointer-events: auto;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: min(900px, 94vw);
+  position: fixed;
   z-index: 0;
 }
 
@@ -57,31 +53,44 @@ body {
   z-index: 1;
 }
 
+.logo {
+  display: block;
+  filter: drop-shadow(0 8px 28px rgba(40, 180, 255, 0.4));
+  height: auto;
+  margin: 0 auto clamp(1rem, 2.4vw, 1.6rem);
+  width: clamp(64px, 7.5vw, 96px);
+}
+
 .brand {
-  color: rgba(22, 18, 15, 0.62);
-  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
-  font-weight: 400;
+  color: rgba(226, 235, 250, 0.66);
+  font-family: "Sora", "Inter", sans-serif;
+  font-size: clamp(0.82rem, 1.05vw, 0.98rem);
+  font-weight: 600;
+  letter-spacing: 0.34em;
   line-height: 1;
-  margin: 0 0 0.45rem;
+  margin: 0 0 0.85rem;
+  text-transform: uppercase;
 }
 
 h1 {
-  color: #171310;
-  font-size: clamp(2.35rem, 4.9vw, 4.85rem);
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 0.92;
+  color: #ffffff;
+  font-family: "Sora", "Inter", sans-serif;
+  font-size: clamp(2.6rem, 5.4vw, 5.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
   margin: 0;
+  text-shadow: 0 0 32px rgba(90, 190, 255, 0.28);
   text-wrap: balance;
 }
 
 .promise {
-  color: rgba(22, 18, 15, 0.66);
-  font-size: clamp(1.08rem, 1.55vw, 1.34rem);
+  color: rgba(214, 224, 240, 0.68);
+  font-size: clamp(1.02rem, 1.45vw, 1.24rem);
   font-weight: 400;
-  line-height: 1.42;
-  margin: clamp(0.85rem, 1.8vw, 1.25rem) auto 0;
-  max-width: 36rem;
+  line-height: 1.5;
+  margin: clamp(1rem, 2vw, 1.4rem) auto 0;
+  max-width: 34rem;
   text-wrap: balance;
 }
 
@@ -89,11 +98,6 @@ h1 {
   .coming-soon {
     justify-content: center;
     padding: 1.25rem;
-  }
-
-  .magic-rings-stage {
-    height: 72vmin;
-    width: 120vmin;
   }
 
   h1 {

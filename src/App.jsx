@@ -5,8 +5,8 @@ export default function App() {
     <main className="coming-soon">
       <div className="magic-rings-stage" aria-hidden="true">
         <MagicRings
-          color="#55f7ee"
-          colorTwo="#42fcff"
+          color="#42fcff"
+          colorTwo="#6366F1"
           ringCount={6}
           speed={1}
           attenuation={10}
@@ -30,6 +30,7 @@ export default function App() {
       </div>
 
       <section className="copy" aria-label="Rumus Muda coming soon">
+        <img className="logo" src="/logo.png" alt="Rumus Muda" width="96" height="96" />
         <p className="brand">Rumus Muda</p>
         <h1>Coming Soon</h1>
         <p className="promise">
