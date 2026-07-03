@@ -230,10 +230,10 @@ export default function Orb({
     let currentRot = 0;
     const rotationSpeed = 0.3;
 
-    const handleMouseMove = (event) => {
+    const updateHoverFromPoint = (clientX, clientY) => {
       const rect = container.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
       const width = rect.width;
       const height = rect.height;
       const size = Math.min(width, height);
@@ -242,15 +242,19 @@ export default function Orb({
       const uvX = ((x - centerX) / size) * 2.0;
       const uvY = ((y - centerY) / size) * 2.0;
 
-      targetHover = Math.sqrt(uvX * uvX + uvY * uvY) < 0.8 ? 1 : 0;
+      targetHover = Math.sqrt(uvX * uvX + uvY * uvY) < 1.12 ? 1 : 0;
     };
 
-    const handleMouseLeave = () => {
+    const handlePointerMove = (event) => {
+      updateHoverFromPoint(event.clientX, event.clientY);
+    };
+
+    const handlePointerLeave = () => {
       targetHover = 0;
     };
 
-    container.addEventListener('mousemove', handleMouseMove);
-    container.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('pointerleave', handlePointerLeave);
 
     let rafId;
     const update = (time) => {
@@ -278,8 +282,8 @@ export default function Orb({
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener('resize', resize);
-      container.removeEventListener('mousemove', handleMouseMove);
-      container.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerleave', handlePointerLeave);
       container.removeChild(gl.canvas);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
