@@ -8,9 +8,88 @@
       content="Rumus Muda is building a new kind of tech education for people who are already great at what they do."
     />
     <title>Rumus Muda Coming Soon</title>
+    <style>
+      :root {
+        background: #05060c;
+        color: #f7f4ee;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body,
+      #root {
+        min-height: 100%;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at 50% 42%, rgba(156, 67, 254, 0.48), transparent 20rem),
+          radial-gradient(circle at 58% 48%, rgba(76, 194, 233, 0.38), transparent 22rem),
+          linear-gradient(135deg, #05060c 0%, #0d1020 47%, #070814 100%);
+        margin: 0;
+        min-width: 320px;
+      }
+
+      .fallback-coming-soon {
+        align-items: center;
+        display: grid;
+        min-height: 100svh;
+        padding: clamp(2rem, 5vw, 5rem);
+        place-items: center;
+        text-align: center;
+      }
+
+      .fallback-coming-soon p {
+        margin: 0;
+      }
+
+      .fallback-eyebrow {
+        color: rgba(247, 244, 238, 0.72);
+        font-size: clamp(0.82rem, 1.5vw, 0.96rem);
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+
+      .fallback-coming-soon h1 {
+        color: #fffaf2;
+        font-size: clamp(4.2rem, 16vw, 12.5rem);
+        font-weight: 800;
+        letter-spacing: 0;
+        line-height: 0.84;
+        margin: 0;
+      }
+
+      .fallback-promise {
+        color: rgba(247, 244, 238, 0.86);
+        font-size: clamp(1.15rem, 2.6vw, 2.3rem);
+        font-weight: 500;
+        line-height: 1.18;
+        margin: clamp(1.4rem, 3vw, 2.2rem) auto 0;
+        max-width: 46rem;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main class="fallback-coming-soon">
+        <section aria-label="Rumus Muda coming soon">
+          <p class="fallback-eyebrow">Rumus Muda</p>
+          <h1>Coming Soon</h1>
+          <p class="fallback-promise">
+            Building a new kind of tech education for people who are already
+            great at what they do
+          </p>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
