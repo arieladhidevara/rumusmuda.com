@@ -38,14 +38,14 @@ body {
 }
 
 .threads-stage {
-  height: min(1080px, 112vmin);
+  height: 100svh;
   left: 50%;
-  opacity: 0.9;
+  opacity: 1;
   pointer-events: auto;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: min(1080px, 112vmin);
+  width: 100vw;
   z-index: 0;
 }
 
@@ -92,8 +92,8 @@ h1 {
   }
 
   .threads-stage {
-    height: 142vmin;
-    width: 142vmin;
+    height: 100svh;
+    width: 100vw;
   }
 
   h1 {

@@ -24,9 +24,9 @@ uniform vec2 uMouse;
 
 #define PI 3.1415926538
 
-const int u_line_count = 40;
-const float u_line_width = 7.0;
-const float u_line_blur = 10.0;
+const int u_line_count = 56;
+const float u_line_width = 18.0;
+const float u_line_blur = 16.0;
 
 float Perlin2D(vec2 P) {
     vec2 Pi = floor(P);
@@ -58,11 +58,11 @@ float lineFn(vec2 st, float width, float perc, float offset, vec2 mouse, float t
     float split_point = 0.1 + split_offset;
 
     float amplitude_normal = smoothstep(split_point, 0.7, st.x);
-    float amplitude_strength = 0.5;
+    float amplitude_strength = 0.9;
     float finalAmplitude = amplitude_normal * amplitude_strength
                            * amplitude * (1.0 + (mouse.y - 0.5) * 0.2);
 
-    float time_scaled = time / 10.0 + (mouse.x - 0.5) * 1.0;
+    float time_scaled = time / 7.0 + (mouse.x - 0.5) * 1.6;
     float blur = smoothstep(split_point, split_point + 0.05, st.x) * perc;
 
     float xnoise = mix(
@@ -110,7 +110,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
         ));
     }
 
-    float colorVal = 1.0 - line_strength;
+    float colorVal = clamp((1.0 - line_strength) * 2.8, 0.0, 1.0);
     fragColor = vec4(uColor * colorVal, colorVal);
 }
 

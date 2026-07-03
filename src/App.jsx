@@ -6,8 +6,8 @@ export default function App() {
       <div className="threads-stage" aria-hidden="true">
         <Threads
           color={[0.14901960784313725, 0.5490196078431373, 1]}
-          amplitude={1}
-          distance={0.6}
+          amplitude={1.45}
+          distance={0.48}
           enableMouseInteraction
         />
       </div>
