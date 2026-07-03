@@ -36,8 +36,10 @@ export default function App() {
       </div>
 
       <section className="copy" aria-label="Rumus Muda coming soon">
-        <p className="eyebrow">Rumus Muda</p>
-        <h1>Coming Soon</h1>
+        <h1>
+          <span>Rumus Muda</span>
+          <span>Coming Soon</span>
+        </h1>
         <p className="promise">
           Building a new kind of tech education for people who are already
           great at what they do
