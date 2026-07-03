@@ -28,36 +28,33 @@ body {
 .coming-soon {
   align-items: center;
   background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0.75rem, 2.2vh, 1.5rem);
+  display: grid;
   justify-content: center;
   min-height: 100svh;
   overflow: hidden;
   padding: clamp(1.2rem, 3.5vh, 2.6rem) clamp(1.25rem, 4vw, 3rem);
+  place-items: center;
   position: relative;
 }
 
-.orb-stage {
-  aspect-ratio: 1;
-  filter: saturate(1.04) contrast(1.02);
-  height: min(67vh, 39rem);
-  max-height: 39rem;
-  max-width: 39rem;
-  min-height: 18rem;
-  min-width: 18rem;
-  opacity: 1;
+.threads-stage {
+  height: min(1080px, 112vmin);
+  left: 50%;
+  opacity: 0.9;
   pointer-events: auto;
-  position: relative;
-  width: min(67vh, 72vw, 39rem);
-  z-index: 1;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(1080px, 112vmin);
+  z-index: 0;
 }
 
 .copy {
   max-width: 48rem;
+  pointer-events: none;
   position: relative;
   text-align: center;
-  z-index: 2;
+  z-index: 1;
 }
 
 .brand {
@@ -90,16 +87,13 @@ h1 {
 
 @media (max-width: 820px) {
   .coming-soon {
-    gap: 1rem;
     justify-content: center;
     padding: 1.25rem;
   }
 
-  .orb-stage {
-    height: min(58vh, 88vw);
-    min-height: 15rem;
-    min-width: 15rem;
-    width: min(58vh, 88vw);
+  .threads-stage {
+    height: 142vmin;
+    width: 142vmin;
   }
 
   h1 {

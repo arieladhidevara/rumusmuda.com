@@ -1,15 +1,14 @@
-import Orb from './components/Orb.jsx';
+import Threads from './components/Threads.jsx';
 
 export default function App() {
   return (
     <main className="coming-soon">
-      <div className="orb-stage" aria-hidden="true">
-        <Orb
-          hoverIntensity={2}
-          rotateOnHover
-          hue={0}
-          forceHoverState={false}
-          backgroundColor="#ffffff"
+      <div className="threads-stage" aria-hidden="true">
+        <Threads
+          color={[0.14901960784313725, 0.5490196078431373, 1]}
+          amplitude={1}
+          distance={0.6}
+          enableMouseInteraction
         />
       </div>
 
