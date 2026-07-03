@@ -1,14 +1,31 @@
-import Threads from './components/Threads.jsx';
+import MagicRings from './components/MagicRings.jsx';
 
 export default function App() {
   return (
     <main className="coming-soon">
-      <div className="threads-stage" aria-hidden="true">
-        <Threads
-          color={[0.14901960784313725, 0.5490196078431373, 1]}
-          amplitude={1.45}
-          distance={0.48}
-          enableMouseInteraction
+      <div className="magic-rings-stage" aria-hidden="true">
+        <MagicRings
+          color="#55f7ee"
+          colorTwo="#42fcff"
+          ringCount={6}
+          speed={1}
+          attenuation={10}
+          lineThickness={2}
+          baseRadius={0.35}
+          radiusStep={0.1}
+          scaleRate={0.1}
+          opacity={1}
+          blur={0}
+          noiseAmount={0.04}
+          rotation={0}
+          ringGap={1.5}
+          fadeIn={0.7}
+          fadeOut={0.5}
+          followMouse
+          mouseInfluence={0.2}
+          hoverScale={1.2}
+          parallax={0.05}
+          clickBurst
         />
       </div>
 

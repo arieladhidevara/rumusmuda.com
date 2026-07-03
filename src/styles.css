@@ -37,15 +37,15 @@ body {
   position: relative;
 }
 
-.threads-stage {
-  height: 100svh;
+.magic-rings-stage {
+  height: min(720px, 76vmin);
   left: 50%;
-  opacity: 1;
+  opacity: 0.88;
   pointer-events: auto;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 100vw;
+  width: min(900px, 94vw);
   z-index: 0;
 }
 
@@ -91,9 +91,9 @@ h1 {
     padding: 1.25rem;
   }
 
-  .threads-stage {
-    height: 100svh;
-    width: 100vw;
+  .magic-rings-stage {
+    height: 72vmin;
+    width: 120vmin;
   }
 
   h1 {
