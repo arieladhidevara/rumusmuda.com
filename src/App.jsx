@@ -15,6 +15,8 @@ import Values from './components/Values.jsx';
 import CTA from './components/CTA.jsx';
 import Footer from './components/Footer.jsx';
 
+const CLICK_SRC = '/click.mp3';
+
 export default function App() {
   const [ready, setReady] = useState(REDUCED_MOTION);
   const lenisRef = useRef(null);
@@ -77,6 +79,34 @@ export default function App() {
       });
     });
     return () => cleanups.forEach((fn) => fn());
+  }, [ready]);
+
+  // Subtle UI tick for primary buttons and the hero sound control.
+  useEffect(() => {
+    if (!ready || REDUCED_MOTION) return;
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    const audio = new Audio(CLICK_SRC);
+    audio.preload = 'auto';
+    audio.volume = 0.22;
+
+    let lastPlayed = 0;
+    const playHover = () => {
+      const now = performance.now();
+      if (now - lastPlayed < 90) return;
+      lastPlayed = now;
+
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
+    };
+
+    const targets = document.querySelectorAll('.btn, .sound-toggle');
+    targets.forEach((target) => target.addEventListener('pointerenter', playHover));
+
+    return () => {
+      targets.forEach((target) => target.removeEventListener('pointerenter', playHover));
+      audio.pause();
+    };
   }, [ready]);
 
   // Every eyebrow label scrambles in the first time it enters the viewport.

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { gsap, REDUCED_MOTION } from '../lib/gsap.js';
 
 const HEADLINE = 'Build your edge';
@@ -27,6 +27,7 @@ export default function Hero({ ready }) {
   const rootRef = useRef(null);
   const audioRef = useRef(null);
   const [soundOn, setSoundOn] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [soundBlocked, setSoundBlocked] = useState(false);
 
   // Hide everything before the intro so nothing flashes while the
@@ -70,47 +71,71 @@ export default function Hero({ ready }) {
     return () => ctx.revert();
   }, [ready]);
 
-  useEffect(() => {
+  const startAmbient = useCallback(() => {
     const audio = audioRef.current;
-    if (!ready || !audio) return;
+    if (!audio) return Promise.resolve();
 
     audio.volume = 0.32;
     audio.loop = true;
 
+    return audio
+      .play()
+      .then(() => {
+        setSoundOn(true);
+        setIsPlaying(true);
+        setSoundBlocked(false);
+      })
+      .catch(() => {
+        setSoundBlocked(true);
+        setIsPlaying(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!ready || !audio) return;
+
     if (!soundOn) {
       audio.pause();
+      setIsPlaying(false);
       return;
     }
 
-    audio
-      .play()
-      .then(() => setSoundBlocked(false))
-      .catch(() => {
-        setSoundBlocked(true);
-        setSoundOn(false);
-      });
-  }, [ready, soundOn]);
+    startAmbient();
+  }, [ready, soundOn, startAmbient]);
+
+  useEffect(() => {
+    if (!ready || !soundOn || isPlaying) return;
+
+    const retry = () => {
+      startAmbient();
+    };
+
+    window.addEventListener('pointerdown', retry, { once: true });
+    window.addEventListener('keydown', retry, { once: true });
+    window.addEventListener('touchstart', retry, { once: true, passive: true });
+
+    return () => {
+      window.removeEventListener('pointerdown', retry);
+      window.removeEventListener('keydown', retry);
+      window.removeEventListener('touchstart', retry);
+    };
+  }, [ready, soundOn, isPlaying, startAmbient]);
 
   const toggleSound = () => {
     const audio = audioRef.current;
-    const next = !soundOn;
-
-    setSoundOn(next);
-    setSoundBlocked(false);
 
     if (!audio) return;
-    if (!next) {
+    if (isPlaying) {
       audio.pause();
+      setSoundOn(false);
+      setIsPlaying(false);
+      setSoundBlocked(false);
       return;
     }
 
-    audio
-      .play()
-      .then(() => setSoundBlocked(false))
-      .catch(() => {
-        setSoundBlocked(true);
-        setSoundOn(false);
-      });
+    setSoundOn(true);
+    startAmbient();
   };
 
   return (
@@ -127,19 +152,19 @@ export default function Hero({ ready }) {
 
       <audio ref={audioRef} src={AMBIENT_SRC} preload="auto" loop />
       <button
-        className={`sound-toggle${soundOn ? ' is-on' : ''}`}
+        className={`sound-toggle${isPlaying ? ' is-on' : ''}`}
         type="button"
-        aria-label={soundOn ? 'Turn sound off' : 'Turn sound on'}
-        aria-pressed={soundOn}
+        aria-label={isPlaying ? 'Turn sound off' : 'Turn sound on'}
+        aria-pressed={isPlaying}
         onClick={toggleSound}
-        title={soundOn ? 'Sound on' : soundBlocked ? 'Click to enable sound' : 'Sound off'}
+        title={isPlaying ? 'Sound on' : soundBlocked ? 'Click to enable sound' : 'Sound off'}
       >
         <span className="sound-icon" aria-hidden="true">
           <span />
           <span />
           <span />
         </span>
-        <span className="sound-state">{soundOn ? 'On' : 'Off'}</span>
+        <span className="sound-state">{isPlaying ? 'On' : 'Off'}</span>
       </button>
 
       <div className="hero-scroll">Scroll to explore</div>
