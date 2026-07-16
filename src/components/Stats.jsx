@@ -18,7 +18,7 @@ const STATS = [
     label: 'Capstone',
     number: '01',
     unit: 'final project',
-    desc: 'Setiap student ship working prototype AI agent di akhir program - bukan cuma sertifikat.',
+    desc: 'Setiap student ship prototype AI agent yang relevan dengan expertise atau use case mereka sendiri.',
   },
 ];
 

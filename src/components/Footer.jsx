@@ -59,9 +59,9 @@ export default function Footer({ onNavigate }) {
             <span>Rumusmuda</span>
           </a>
           <p>
-            Produk edukasi digital untuk generasi muda Indonesia - belajar AI
-            dan digital skills dengan cara yang benar: teori yang jelas,
-            praktik yang nyata.
+            Tech literacy untuk manusia dengan expertise unik - belajar AI dan
+            tools digital supaya bisa diterapkan ke creative work, law,
+            business, education, research, dan bidang lainnya.
           </p>
         </div>
 
@@ -102,7 +102,7 @@ export default function Footer({ onNavigate }) {
 
       <div className="footer-bottom">
         <span>(c) 2026 Rumusmuda. All rights reserved.</span>
-        <span>Indonesia - Digital Education</span>
+        <span>Indonesia - Tech Literacy</span>
         <button type="button" onClick={() => onNavigate(0)}>
           Back to top
         </button>

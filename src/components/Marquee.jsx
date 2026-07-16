@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap, REDUCED_MOTION } from '../lib/gsap.js';
 
-const ITEMS = ['Human + AI Agents', 'Agentic Web', 'Pre-course + 5 Weeks', 'Theory to Prototype'];
+const ITEMS = ['Human + AI Agents', 'Creative + AI', 'Law + AI', 'Expertise to Prototype'];
 
 export default function Marquee() {
   const rootRef = useRef(null);

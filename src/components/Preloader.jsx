@@ -51,7 +51,7 @@ export default function Preloader({ onDone }) {
     <div className="preloader" ref={rootRef} aria-hidden="true">
       <span className="preloader-percent">0%</span>
       <span className="preloader-label">Loading content</span>
-      <span className="preloader-tag">Rumusmuda - Digital Education</span>
+      <span className="preloader-tag">Rumusmuda - Tech Literacy</span>
       <span className="preloader-bar" />
     </div>
   );

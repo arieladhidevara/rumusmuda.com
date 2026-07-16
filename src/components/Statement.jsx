@@ -2,9 +2,10 @@ import { useEffect, useRef } from 'react';
 import { gsap, REDUCED_MOTION } from '../lib/gsap.js';
 
 const TEXT =
-  'Rumusmuda percaya: hal-hal sulit itu bisa dipelajari. Setiap program ' +
-  'kami dirancang supaya belajar terasa seperti discovery, bukan kewajiban ' +
-  '- karena mengubah curiosity jadi mastery butuh craft yang serius.';
+  'Rumusmuda percaya teknologi paling berguna ketika bertemu manusia dengan ' +
+  'keunikan, konteks, dan expertise masing-masing. Kami membantu learners ' +
+  'memakai AI dan tools digital untuk memperkuat cara mereka berpikir, berkarya, ' +
+  'dan menyelesaikan masalah di bidangnya sendiri.';
 
 export default function Statement() {
   const rootRef = useRef(null);

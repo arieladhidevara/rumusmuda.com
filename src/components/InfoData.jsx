@@ -6,7 +6,7 @@ const IG_URL = 'https://www.instagram.com/rumusmuda/';
 const ROWS = [
   { label: 'Established', value: '2026' },
   { label: 'Origin', value: 'Indonesia' },
-  { label: 'Focus', value: 'AI & digital skills' },
+  { label: 'Focus', value: 'Tech literacy + human expertise' },
   { label: 'Active program', value: 'Human + AI Agents' },
   { label: 'Format', value: 'Pre-course + 5 weeks | online | hands-on' },
   { label: 'Instagram', value: '@rumusmuda', href: IG_URL },
@@ -53,15 +53,14 @@ export default function InfoData({ onNavigate }) {
         <div className="info-copy">
           <span className="eyebrow">Informations / Data</span>
           <h3>
-            Studio edukasi digital untuk generasi muda Indonesia.
+            Tech literacy studio for people with unique expertise.
           </h3>
           <p>
-            Produk kami mencakup seluruh spektrum belajar - interactive
-            courses, practice tools, dan learning community. Program pertama
-            kami, Human + AI Agents, adalah pintu masuknya: program project-based
-            untuk memahami cara kerja dan cara membangun AI agents. Visi kami
-            sederhana: pengalaman belajar yang clear, rigorous, dan genuinely
-            fun.
+            Rumusmuda membantu learners menghubungkan teknologi dengan bidang,
+            minat, dan keunggulan mereka masing-masing. Program pertama kami,
+            Human + AI Agents, adalah pintu masuk menuju cara belajar baru:
+            project-based, outcome-first, dan relevan untuk banyak domain -
+            dari creative + AI sampai law + AI.
           </p>
           <a
             className="btn"

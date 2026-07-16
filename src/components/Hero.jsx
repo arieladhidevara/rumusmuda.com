@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { gsap, REDUCED_MOTION, SCRAMBLE_CHARS } from '../lib/gsap.js';
 
-const HEADLINE = 'Master the formula';
-const ACCENT_WORDS = new Set(['formula']);
+const HEADLINE = 'Build your edge';
+const ACCENT_WORDS = new Set(['edge']);
 
 const META = [
   { className: 'hero-meta--tl', strong: 'Program 001', label: 'Human + AI Agents' },
@@ -90,13 +90,13 @@ export default function Hero({ ready }) {
   return (
     <section className="hero" id="top" ref={rootRef}>
       <div className="hero-inner">
-        <span className="eyebrow">Tech literacy for brilliant people</span>
+        <span className="eyebrow">Tech literacy for unique expertise</span>
         <h1 className="hero-title" aria-label={HEADLINE}>
           <SplitWords text={HEADLINE} />
         </h1>
         <p className="hero-sub">
-          Rumusmuda equips brilliant people with tech literacy - starting with
-          AI and agentic systems.
+          Rumusmuda equips people with the tech literacy to amplify their own
+          expertise - from creative work to law, research, business, and beyond.
         </p>
       </div>
 

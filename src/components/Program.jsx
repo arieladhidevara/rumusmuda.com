@@ -127,9 +127,10 @@ export default function Program() {
         <span className="eyebrow">Program 001 - Limited to 30 people</span>
         <h2 className="program-title">Human + AI Agents</h2>
         <p className="program-sub">
-          Cohort kecil untuk 30 peserta yang passionate dan ambitious. Fokusnya
-          bukan kuantitas, tapi outcome: memahami AI agents dan membangun
-          working prototype yang bisa didemonstrasikan end-to-end.
+          Cohort kecil untuk 30 peserta yang passionate dan ambitious. Kamu
+          akan belajar AI agents sebagai teknologi yang bisa diterapkan ke
+          expertise masing-masing - dari creative, law, business, research,
+          sampai problem nyata yang kamu bawa sendiri.
         </p>
         <a className="btn program-syllabus" href={SYLLABUS_URL} target="_blank" rel="noreferrer">
           View Syllabus

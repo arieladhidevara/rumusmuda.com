@@ -4,38 +4,39 @@ import { gsap, REDUCED_MOTION } from '../lib/gsap.js';
 const VALUES = [
   {
     num: '001',
-    title: 'Curiosity',
+    title: 'Human Edge',
     icon: 'curiosity',
     body:
-      'Setiap rumus berawal dari pertanyaan. Kami bikin produk yang ' +
-      'menghargai rasa penasaran - karena yang berani bertanya "kenapa" ' +
-      'akan membangun jawaban yang lebih baik.',
+      'Setiap learner datang dengan keunikan, taste, pengalaman, dan cara ' +
+      'berpikir yang berbeda. Teknologi harus memperkuat edge itu, bukan ' +
+      'menyeragamkannya.',
   },
   {
     num: '002',
-    title: 'Clarity',
+    title: 'Tech Literacy',
     icon: 'clarity',
     body:
-      'Ide kompleks berhak dijelaskan dengan sederhana. Kami obsesif soal ' +
-      'tiap diagram, kalimat, dan interaksi - sampai bagian tersulit terasa ' +
-      'obvious.',
+      'Kami mengajarkan cara kerja software, AI, data, dan tools digital dengan ' +
+      'bahasa yang jelas - supaya peserta tidak sekadar memakai teknologi, tapi ' +
+      'mengerti cara mengambil keputusan dengannya.',
   },
   {
     num: '003',
-    title: 'Practice',
+    title: 'Applied Expertise',
     icon: 'practice',
     body:
-      'Mastery itu dibangun, bukan dihafal. Tools kami mengubah repetisi ' +
-      'jadi progres yang bisa kamu lihat - one solved problem at a time.',
+      'Belajar harus nyambung dengan bidang masing-masing: creative + AI, law + ' +
+      'AI, business + AI, education + AI. Output terbaik lahir ketika teknologi ' +
+      'dipakai untuk konteks nyata.',
   },
   {
     num: '004',
-    title: 'Community',
+    title: 'Outcome First',
     icon: 'community',
     body:
-      'Belajar itu lebih seru bareng-bareng. Dari study group sampai mentor ' +
-      'session, Rumusmuda menghubungkan learners yang saling dorong lebih ' +
-      'jauh.',
+      'Kami tidak mengejar kelas yang ramai. Kami mengejar hasil: peserta pulang ' +
+      'dengan prototype, workflow, atau cara kerja baru yang bisa langsung ' +
+      'diimplementasikan dalam expertise mereka.',
   },
 ];
 
@@ -110,7 +111,7 @@ export default function Values() {
     <section className="section" id="values" ref={rootRef}>
       <div className="values-head">
         <span className="eyebrow">Yang kami pegang</span>
-        <h2>Our Values</h2>
+        <h2>What We Believe</h2>
       </div>
 
       <div className="value-stack">

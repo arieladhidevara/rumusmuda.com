@@ -46,8 +46,8 @@ export default function CTA() {
       <p className="cta-copy">
         Batch pertama dibatasi untuk 30 orang yang passionate dan ambitious.
         Kami tidak menjual kuantitas peserta; kami fokus pada outcome: kamu
-        selesai dengan working prototype AI agent yang jelas, bisa dites, dan
-        bisa dipresentasikan.
+        selesai dengan working prototype AI agent yang relevan dengan expertise,
+        keunikan, atau masalah yang ingin kamu implementasikan.
       </p>
       <div className="cta-actions">
         <a
