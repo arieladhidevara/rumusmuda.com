@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap, REDUCED_MOTION } from '../lib/gsap.js';
 
 const HEADLINE = 'Build your edge';
 const ACCENT_WORDS = new Set(['edge']);
+const AMBIENT_SRC = '/ambient.mp3';
 
 function SplitWords({ text }) {
   return text.split(' ').map((word, w) => (
@@ -24,6 +25,9 @@ function SplitWords({ text }) {
 
 export default function Hero({ ready }) {
   const rootRef = useRef(null);
+  const audioRef = useRef(null);
+  const [soundOn, setSoundOn] = useState(true);
+  const [soundBlocked, setSoundBlocked] = useState(false);
 
   // Hide everything before the intro so nothing flashes while the
   // preloader slides away.
@@ -66,6 +70,49 @@ export default function Hero({ ready }) {
     return () => ctx.revert();
   }, [ready]);
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!ready || !audio) return;
+
+    audio.volume = 0.32;
+    audio.loop = true;
+
+    if (!soundOn) {
+      audio.pause();
+      return;
+    }
+
+    audio
+      .play()
+      .then(() => setSoundBlocked(false))
+      .catch(() => {
+        setSoundBlocked(true);
+        setSoundOn(false);
+      });
+  }, [ready, soundOn]);
+
+  const toggleSound = () => {
+    const audio = audioRef.current;
+    const next = !soundOn;
+
+    setSoundOn(next);
+    setSoundBlocked(false);
+
+    if (!audio) return;
+    if (!next) {
+      audio.pause();
+      return;
+    }
+
+    audio
+      .play()
+      .then(() => setSoundBlocked(false))
+      .catch(() => {
+        setSoundBlocked(true);
+        setSoundOn(false);
+      });
+  };
+
   return (
     <section className="hero" id="top" ref={rootRef}>
       <div className="hero-inner">
@@ -77,6 +124,23 @@ export default function Hero({ ready }) {
           expertise - from creative work to law, research, business, and beyond.
         </p>
       </div>
+
+      <audio ref={audioRef} src={AMBIENT_SRC} preload="auto" loop />
+      <button
+        className={`sound-toggle${soundOn ? ' is-on' : ''}`}
+        type="button"
+        aria-label={soundOn ? 'Turn sound off' : 'Turn sound on'}
+        aria-pressed={soundOn}
+        onClick={toggleSound}
+        title={soundOn ? 'Sound on' : soundBlocked ? 'Click to enable sound' : 'Sound off'}
+      >
+        <span className="sound-icon" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </span>
+        <span className="sound-state">{soundOn ? 'On' : 'Off'}</span>
+      </button>
 
       <div className="hero-scroll">Scroll to explore</div>
     </section>

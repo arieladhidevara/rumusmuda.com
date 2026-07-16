@@ -358,30 +358,10 @@ main {
   max-width: 34rem;
 }
 
-.hero-meta {
-  color: var(--ink-dim);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  position: absolute;
-  text-transform: uppercase;
-}
-
-.hero-meta strong {
-  color: var(--cyan);
-  display: block;
-  font-weight: 700;
-}
-
 .hero-title .word--accent .char {
   color: var(--cyan);
   text-shadow: 0 0 40px rgba(28, 201, 244, 0.35);
 }
-
-.hero-meta--tl { left: var(--pad-x); text-align: left; top: 7rem; }
-.hero-meta--tr { right: var(--pad-x); text-align: right; top: 7rem; }
-.hero-meta--bl { bottom: 3.2rem; left: var(--pad-x); text-align: left; }
-.hero-meta--br { bottom: 3.2rem; right: var(--pad-x); text-align: right; }
 
 .hero-scroll {
   align-items: center;
@@ -406,6 +386,91 @@ main {
   height: 44px;
   transform-origin: top center;
   width: 1px;
+}
+
+.sound-toggle {
+  align-items: center;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  background: rgba(4, 11, 26, 0.72);
+  border: 1px solid rgba(213, 224, 255, 0.24);
+  border-radius: 999px;
+  bottom: 2.6rem;
+  color: var(--ink-dim);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 0.6rem;
+  left: var(--pad-x);
+  min-height: 2.75rem;
+  padding: 0 0.9rem;
+  position: absolute;
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  z-index: 2;
+}
+
+.sound-toggle:hover {
+  border-color: rgba(87, 229, 255, 0.48);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.sound-toggle.is-on {
+  border-color: rgba(87, 229, 255, 0.5);
+  color: var(--cyan);
+}
+
+.sound-icon {
+  align-items: end;
+  display: inline-flex;
+  gap: 3px;
+  height: 1rem;
+  width: 1rem;
+}
+
+.sound-icon span {
+  background: currentColor;
+  border-radius: 999px;
+  display: block;
+  height: 0.34rem;
+  opacity: 0.45;
+  transition: height 0.25s ease, opacity 0.25s ease;
+  width: 3px;
+}
+
+.sound-icon span:nth-child(2) {
+  height: 0.62rem;
+}
+
+.sound-icon span:nth-child(3) {
+  height: 0.92rem;
+}
+
+.sound-toggle.is-on .sound-icon span {
+  opacity: 1;
+}
+
+.sound-toggle.is-on .sound-icon span:nth-child(1) {
+  animation: soundBar 0.9s ease-in-out infinite;
+}
+
+.sound-toggle.is-on .sound-icon span:nth-child(2) {
+  animation: soundBar 0.9s ease-in-out 0.15s infinite;
+}
+
+.sound-toggle.is-on .sound-icon span:nth-child(3) {
+  animation: soundBar 0.9s ease-in-out 0.3s infinite;
+}
+
+.sound-state {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@keyframes soundBar {
+  0%, 100% { transform: scaleY(0.55); }
+  50% { transform: scaleY(1); }
 }
 
 @keyframes scrollHint {
@@ -1198,9 +1263,9 @@ main {
     display: none;
   }
 
-  .hero-meta--tl,
-  .hero-meta--tr {
-    display: none;
+  .sound-toggle {
+    bottom: 1.5rem;
+    min-height: 2.5rem;
   }
 
   .cta-actions {
