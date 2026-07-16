@@ -44,10 +44,10 @@ export default function CTA() {
         ))}
       </h2>
       <p className="cta-copy">
-        Kami bukan sekadar brand ed-tech. Kami teachers, engineers, designers,
-        dan storytellers - yang percaya generasi muda Indonesia bisa jadi
-        pemain utama di era AI. Daftar Batch 01 lewat form, atau hubungi kami
-        kalau ada pertanyaan.
+        Batch pertama dibatasi untuk 30 orang yang passionate dan ambitious.
+        Kami tidak menjual kuantitas peserta; kami fokus pada outcome: kamu
+        selesai dengan working prototype AI agent yang jelas, bisa dites, dan
+        bisa dipresentasikan.
       </p>
       <div className="cta-actions">
         <a

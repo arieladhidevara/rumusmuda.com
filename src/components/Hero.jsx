@@ -7,7 +7,7 @@ const ACCENT_WORDS = new Set(['formula']);
 const META = [
   { className: 'hero-meta--tl', strong: 'Program 001', label: 'Human + AI Agent' },
   { className: 'hero-meta--tr', strong: 'Pre-course + 5', label: 'Theory to prototype' },
-  { className: 'hero-meta--bl', strong: '400K+ reach', label: '@rumusmuda' },
+  { className: 'hero-meta--bl', strong: '30 seats', label: 'Outcome-first cohort' },
   { className: 'hero-meta--br', strong: 'Est. 2026', label: 'Indonesia' },
 ];
 

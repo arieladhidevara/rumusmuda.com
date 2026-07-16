@@ -9,10 +9,10 @@ const STATS = [
     desc: 'Pre-course, technical foundations, agent fundamentals, project development, final build, dan demo day.',
   },
   {
-    label: 'Community reach',
-    number: '400',
-    unit: 'K+ reach',
-    desc: 'Audiens tech community di Instagram yang belajar bareng kami setiap hari.',
+    label: 'Limited cohort',
+    number: '30',
+    unit: 'people',
+    desc: 'Hanya untuk peserta yang passionate dan ambitious - supaya feedback, support, dan progress tetap fokus.',
   },
   {
     label: 'Capstone',
