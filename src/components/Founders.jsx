@@ -6,6 +6,7 @@ const FOUNDERS = [
     index: 'F.01',
     name: 'Ariel Adhidevara',
     role: 'Co-founder - Design & Product',
+    photo: '/ariel.png',
     creds: [
       { degree: 'MDes, Mediums', school: 'Harvard University' },
       { degree: 'B.Arch', school: 'California Polytechnic State University' },
@@ -16,6 +17,7 @@ const FOUNDERS = [
     index: 'F.02',
     name: 'Reza Erfit',
     role: 'Co-founder - Community & Data',
+    photo: '/reza.png',
     creds: [
       { degree: 'Tech creator', school: '400K+ followers on Instagram' },
       { degree: 'B.Sc Data Science', school: 'Universitas Airlangga' },
@@ -58,7 +60,7 @@ export default function Founders() {
           0
         )
           .from(
-            row.querySelectorAll('.founder-index, .founder-role'),
+            row.querySelectorAll('.founder-index, .founder-photo, .founder-role'),
             { autoAlpha: 0, duration: 0.8 },
             0.25
           )
@@ -78,9 +80,12 @@ export default function Founders() {
         <div className="section-head">
           <span className="eyebrow">Orang di balik Rumusmuda</span>
         </div>
-        {FOUNDERS.map(({ index, name, role, creds }) => (
+        {FOUNDERS.map(({ index, name, role, photo, creds }) => (
           <article className="founder" key={index}>
             <span className="founder-index">{index}</span>
+            <div className="founder-photo">
+              <img src={photo} alt={name} loading="lazy" />
+            </div>
             <div>
               <h3 className="founder-name" aria-label={name}>
                 <SplitName text={name} />
