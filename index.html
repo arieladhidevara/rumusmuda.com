@@ -5,131 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Rumus Muda is building a new kind of tech education for people who are already great at what they do."
+      content="RumusMuda — produk edukasi digital untuk generasi muda Indonesia. Program pertama: Human + AI Agent, 4 minggu memahami agentic web dari teori sampai hands-on. Follow @rumusmuda."
     />
-    <title>Rumus Muda Coming Soon</title>
+    <title>RumusMuda — Digital Education Products</title>
     <link rel="icon" type="image/png" href="/fav.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <style>
-      :root {
-        background: #06070c;
-        color: #eef2fb;
-        font-family:
-          "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html,
-      body,
-      #root {
-        min-height: 100%;
+      html {
+        background: #020a19;
       }
 
       body {
-        background: #06070c;
+        background: #020a19;
+        color: #d5e0ff;
         margin: 0;
-        min-width: 320px;
       }
 
-      .fallback-coming-soon {
+      .boot-splash {
         align-items: center;
-        background: #06070c;
-        display: grid;
+        display: flex;
+        font-family: "Space Mono", ui-monospace, monospace;
+        font-size: 0.75rem;
         justify-content: center;
+        letter-spacing: 0.2em;
         min-height: 100svh;
-        overflow: hidden;
-        padding: clamp(1.2rem, 3.5vh, 2.6rem) clamp(1.25rem, 4vw, 3rem);
-        place-items: center;
-        position: relative;
-        text-align: center;
-      }
-
-      .fallback-coming-soon::before {
-        background:
-          radial-gradient(ellipse at center, transparent 29%, rgba(85, 247, 238, 0.7) 29.4%, transparent 30.2%),
-          radial-gradient(ellipse at center, transparent 39%, rgba(66, 252, 255, 0.6) 39.4%, transparent 40.2%),
-          radial-gradient(ellipse at center, transparent 49%, rgba(85, 247, 238, 0.48) 49.4%, transparent 50.2%),
-          radial-gradient(ellipse at center, transparent 59%, rgba(66, 252, 255, 0.36) 59.4%, transparent 60.2%);
-        content: "";
-        filter: drop-shadow(0 0 1.25rem rgba(66, 252, 255, 0.22));
-        height: min(720px, 76vmin);
-        left: 50%;
-        opacity: 0.88;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: min(900px, 94vw);
-        z-index: 0;
-      }
-
-      .fallback-copy {
-        max-width: 48rem;
-        position: relative;
-        z-index: 1;
-      }
-
-      .fallback-coming-soon h1 {
-        color: #171310;
-        font-size: clamp(2.35rem, 4.9vw, 4.85rem);
-        font-weight: 500;
-        letter-spacing: 0;
-        line-height: 0.92;
-        margin: 0;
-      }
-
-      .fallback-brand {
-        color: rgba(22, 18, 15, 0.62);
-        font-size: clamp(1.05rem, 1.6vw, 1.35rem);
-        font-weight: 400;
-        line-height: 1;
-        margin: 0 0 0.45rem;
-      }
-
-      .fallback-promise {
-        color: rgba(22, 18, 15, 0.66);
-        font-size: clamp(1.08rem, 1.55vw, 1.34rem);
-        font-weight: 400;
-        line-height: 1.42;
-        margin: clamp(0.85rem, 1.8vw, 1.25rem) auto 0;
-        max-width: 36rem;
-      }
-
-      @media (max-width: 820px) {
-        .fallback-coming-soon {
-          padding: 1.25rem;
-        }
-
-        .fallback-coming-soon::before {
-          height: 72vmin;
-          width: 120vmin;
-        }
-
-        .fallback-coming-soon h1 {
-          font-size: clamp(2.15rem, 10vw, 4rem);
-        }
+        text-transform: uppercase;
       }
     </style>
   </head>
   <body>
     <div id="root">
-      <main class="fallback-coming-soon">
-        <section class="fallback-copy" aria-label="Rumus Muda coming soon">
-          <p class="fallback-brand">Rumus Muda</p>
-          <h1>Coming Soon</h1>
-          <p class="fallback-promise">
-            Building a new kind of tech education for people who are already
-            great at what they do
-          </p>
-        </section>
-      </main>
+      <div class="boot-splash">RumusMuda</div>
     </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
