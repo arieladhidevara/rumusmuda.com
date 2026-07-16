@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react';
 import { gsap, REDUCED_MOTION } from '../lib/gsap.js';
 
 const TEXT =
-  'RumusMuda percaya: hal-hal sulit itu bisa dipelajari. Setiap program ' +
+  'Rumusmuda percaya: hal-hal sulit itu bisa dipelajari. Setiap program ' +
   'kami dirancang supaya belajar terasa seperti discovery, bukan kewajiban ' +
-  '— karena mengubah curiosity jadi mastery butuh craft yang serius.';
+  '- karena mengubah curiosity jadi mastery butuh craft yang serius.';
 
 export default function Statement() {
   const rootRef = useRef(null);
@@ -38,7 +38,7 @@ export default function Statement() {
   return (
     <section className="section" id="about">
       <div className="statement" ref={rootRef}>
-        <span className="eyebrow">About RumusMuda</span>
+        <span className="eyebrow">About Rumusmuda</span>
         <p>
           {TEXT.split(' ').map((word, i) => (
             <span key={i}>

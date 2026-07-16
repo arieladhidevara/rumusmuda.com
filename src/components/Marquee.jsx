@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap, REDUCED_MOTION } from '../lib/gsap.js';
 
-const ITEMS = ['Human + AI Agent', 'Agentic Web', '4 Weeks', 'Theory → Hands-on'];
+const ITEMS = ['Human + AI Agent', 'Agentic Web', 'Pre-course + 5 Weeks', 'Theory to Prototype'];
 
 export default function Marquee() {
   const rootRef = useRef(null);
@@ -48,7 +48,7 @@ export default function Marquee() {
                 className={`marquee-item${i % 2 ? ' is-outline' : ''}`}
                 key={i}
               >
-                {item} <i>◆</i>
+                {item} <i>*</i>
               </span>
             ))}
           </span>

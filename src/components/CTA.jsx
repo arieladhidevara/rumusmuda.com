@@ -26,7 +26,7 @@ export default function CTA() {
 
   return (
     <section className="section cta" id="contact" ref={rootRef}>
-      <span className="eyebrow">Batch pertama — Human + AI Agent</span>
+      <span className="eyebrow">Batch pertama - Human + AI Agent</span>
       <h2 className="cta-title" aria-label={HEADLINE}>
         {HEADLINE.split(' ').map((word, w) => (
           <span key={w}>
@@ -42,7 +42,7 @@ export default function CTA() {
       </h2>
       <p className="cta-copy">
         Kami bukan sekadar brand ed-tech. Kami teachers, engineers, designers,
-        dan storytellers — yang percaya generasi muda Indonesia bisa jadi
+        dan storytellers - yang percaya generasi muda Indonesia bisa jadi
         pemain utama di era AI. Daftar dan update batch ada di Instagram.
       </p>
       <div className="cta-actions">

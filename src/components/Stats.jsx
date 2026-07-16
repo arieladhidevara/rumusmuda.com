@@ -4,9 +4,9 @@ import { gsap, REDUCED_MOTION } from '../lib/gsap.js';
 const STATS = [
   {
     label: 'Durasi program',
-    number: '04',
+    number: '05',
     unit: 'weeks',
-    desc: 'Empat minggu intensif — dari teori agentic web sampai hands-on build dan deploy.',
+    desc: 'Pre-course, technical foundations, agent fundamentals, project development, final build, dan demo day.',
   },
   {
     label: 'Community reach',
@@ -18,12 +18,12 @@ const STATS = [
     label: 'Capstone',
     number: '01',
     unit: 'final project',
-    desc: 'Setiap student ship AI agent-nya sendiri di akhir program — bukan cuma sertifikat.',
+    desc: 'Setiap student ship working prototype AI agent di akhir program - bukan cuma sertifikat.',
   },
 ];
 
 /* Two full 0-9 loops so every digit rolls through a whole revolution
-   before settling — 20 cells, 5% of track height each. */
+   before settling - 20 cells, 5% of track height each. */
 const TRACK = [...Array(20).keys()].map((n) => n % 10);
 
 function Odometer({ value }) {
@@ -80,7 +80,7 @@ export default function Stats() {
     <section className="section" id="numbers" ref={rootRef}>
       <div className="stats">
         <div className="section-head">
-          <span className="eyebrow">RumusMuda in numbers</span>
+          <span className="eyebrow">Rumusmuda in numbers</span>
         </div>
         {STATS.map(({ label, number, unit, desc }) => (
           <div className="stat-row" key={label}>

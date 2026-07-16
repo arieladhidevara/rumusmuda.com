@@ -7,7 +7,7 @@ const VALUES = [
     title: 'Curiosity',
     body:
       'Setiap rumus berawal dari pertanyaan. Kami bikin produk yang ' +
-      'menghargai rasa penasaran — karena yang berani bertanya "kenapa" ' +
+      'menghargai rasa penasaran - karena yang berani bertanya "kenapa" ' +
       'akan membangun jawaban yang lebih baik.',
   },
   {
@@ -15,7 +15,7 @@ const VALUES = [
     title: 'Clarity',
     body:
       'Ide kompleks berhak dijelaskan dengan sederhana. Kami obsesif soal ' +
-      'tiap diagram, kalimat, dan interaksi — sampai bagian tersulit terasa ' +
+      'tiap diagram, kalimat, dan interaksi - sampai bagian tersulit terasa ' +
       'obvious.',
   },
   {
@@ -23,14 +23,14 @@ const VALUES = [
     title: 'Practice',
     body:
       'Mastery itu dibangun, bukan dihafal. Tools kami mengubah repetisi ' +
-      'jadi progres yang bisa kamu lihat — one solved problem at a time.',
+      'jadi progres yang bisa kamu lihat - one solved problem at a time.',
   },
   {
     num: '004',
     title: 'Community',
     body:
       'Belajar itu lebih seru bareng-bareng. Dari study group sampai mentor ' +
-      'session, RumusMuda menghubungkan learners yang saling dorong lebih ' +
+      'session, Rumusmuda menghubungkan learners yang saling dorong lebih ' +
       'jauh.',
   },
 ];

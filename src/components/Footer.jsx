@@ -12,10 +12,10 @@ const LINKS = [
 const SOCIALS = [
   {
     num: '01',
-    label: 'Instagram — @rumusmuda',
+    label: 'Instagram - @rumusmuda',
     href: 'https://www.instagram.com/rumusmuda/',
   },
-  { num: '02', label: 'Email — hello@rumusmuda.com', href: 'mailto:hello@rumusmuda.com' },
+  { num: '02', label: 'Email - hello@rumusmuda.com', href: 'mailto:hello@rumusmuda.com' },
 ];
 
 export default function Footer({ onNavigate }) {
@@ -56,10 +56,10 @@ export default function Footer({ onNavigate }) {
             }}
           >
             <img src="/logo.png" alt="" width="30" height="30" />
-            <span>RumusMuda</span>
+            <span>Rumusmuda</span>
           </a>
           <p>
-            Produk edukasi digital untuk generasi muda Indonesia — belajar AI
+            Produk edukasi digital untuk generasi muda Indonesia - belajar AI
             dan digital skills dengan cara yang benar: teori yang jelas,
             praktik yang nyata.
           </p>
@@ -101,10 +101,10 @@ export default function Footer({ onNavigate }) {
       <div className="footer-wordmark">RUMUSMUDA</div>
 
       <div className="footer-bottom">
-        <span>© 2026 RumusMuda. All rights reserved.</span>
-        <span>Indonesia — Digital Education</span>
+        <span>(c) 2026 Rumusmuda. All rights reserved.</span>
+        <span>Indonesia - Digital Education</span>
         <button type="button" onClick={() => onNavigate(0)}>
-          Back to top ↑
+          Back to top
         </button>
       </div>
     </footer>

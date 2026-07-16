@@ -6,7 +6,7 @@ const ACCENT_WORDS = new Set(['formula']);
 
 const META = [
   { className: 'hero-meta--tl', strong: 'Program 001', label: 'Human + AI Agent' },
-  { className: 'hero-meta--tr', strong: '04 weeks', label: 'Theory → hands-on' },
+  { className: 'hero-meta--tr', strong: 'Pre-course + 5', label: 'Theory to prototype' },
   { className: 'hero-meta--bl', strong: '400K+ reach', label: '@rumusmuda' },
   { className: 'hero-meta--br', strong: 'Est. 2026', label: 'Indonesia' },
 ];
@@ -95,8 +95,8 @@ export default function Hero({ ready }) {
           <SplitWords text={HEADLINE} />
         </h1>
         <p className="hero-sub">
-          RumusMuda bikin produk edukasi digital yang mengubah curiosity jadi
-          real skills — dimulai dari AI dan agentic web.
+          Rumusmuda bikin produk edukasi digital yang mengubah curiosity jadi
+          real skills - dimulai dari AI dan agentic web.
         </p>
       </div>
 

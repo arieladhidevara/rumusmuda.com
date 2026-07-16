@@ -32,7 +32,7 @@ export default function Preloader({ onDone }) {
           '.preloader-label',
           {
             duration: 0.8,
-            scrambleText: { text: 'Ready to explore', chars: SCRAMBLE_CHARS, speed: 0.4 },
+            scrambleText: { text: 'ready to explore', chars: SCRAMBLE_CHARS, speed: 0.4 },
           },
           '-=0.5'
         )
@@ -51,7 +51,7 @@ export default function Preloader({ onDone }) {
     <div className="preloader" ref={rootRef} aria-hidden="true">
       <span className="preloader-percent">0%</span>
       <span className="preloader-label">Loading content</span>
-      <span className="preloader-tag">RumusMuda — Digital Education</span>
+      <span className="preloader-tag">Rumusmuda - Digital Education</span>
       <span className="preloader-bar" />
     </div>
   );

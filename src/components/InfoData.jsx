@@ -8,7 +8,7 @@ const ROWS = [
   { label: 'Origin', value: 'Indonesia' },
   { label: 'Focus', value: 'AI & digital skills' },
   { label: 'Active program', value: 'Human + AI Agent' },
-  { label: 'Format', value: '4 weeks · online · hands-on' },
+  { label: 'Format', value: 'Pre-course + 5 weeks | online | hands-on' },
   { label: 'Instagram', value: '@rumusmuda', href: IG_URL },
 ];
 
@@ -56,10 +56,10 @@ export default function InfoData({ onNavigate }) {
             Studio edukasi digital untuk generasi muda Indonesia.
           </h3>
           <p>
-            Produk kami mencakup seluruh spektrum belajar — interactive
+            Produk kami mencakup seluruh spektrum belajar - interactive
             courses, practice tools, dan learning community. Program pertama
-            kami, Human + AI Agent, adalah pintu masuknya: empat minggu
-            memahami cara kerja — dan cara membangun — AI agents. Visi kami
+            kami, Human + AI Agent, adalah pintu masuknya: program project-based
+            untuk memahami cara kerja dan cara membangun AI agents. Visi kami
             sederhana: pengalaman belajar yang clear, rigorous, dan genuinely
             fun.
           </p>
@@ -76,7 +76,7 @@ export default function InfoData({ onNavigate }) {
         </div>
 
         <dl className="info-card">
-          <div className="info-card-title">About RumusMuda — Data</div>
+          <div className="info-card-title">About Rumusmuda - Data</div>
           {ROWS.map(({ label, value, href }) => (
             <div className="info-row" key={label}>
               <dt>{label}</dt>

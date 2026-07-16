@@ -5,7 +5,7 @@ const FOUNDERS = [
   {
     index: 'F.01',
     name: 'Ariel Adhidevara',
-    role: 'Co-founder — Design & Product',
+    role: 'Co-founder - Design & Product',
     creds: [
       { degree: 'MDes, Mediums', school: 'Harvard University' },
       { degree: 'B.Arch', school: 'California Polytechnic State University' },
@@ -15,7 +15,7 @@ const FOUNDERS = [
   {
     index: 'F.02',
     name: 'Reza Erfit',
-    role: 'Co-founder — Community & Data',
+    role: 'Co-founder - Community & Data',
     creds: [
       { degree: 'Tech creator', school: '400K+ followers on Instagram' },
       { degree: 'B.Sc Data Science', school: 'Universitas Airlangga' },
@@ -76,7 +76,7 @@ export default function Founders() {
     <section className="section" id="founders" ref={rootRef}>
       <div className="founders-list">
         <div className="section-head">
-          <span className="eyebrow">Orang di balik RumusMuda</span>
+          <span className="eyebrow">Orang di balik Rumusmuda</span>
         </div>
         {FOUNDERS.map(({ index, name, role, creds }) => (
           <article className="founder" key={index}>

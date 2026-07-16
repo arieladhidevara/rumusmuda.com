@@ -42,7 +42,7 @@ export default function Nav({ ready, onNavigate }) {
     >
       <a className="nav-brand" href="#top" onClick={(e) => handleClick(e, 0)}>
         <img src="/logo.png" alt="" width="30" height="30" />
-        <span>RumusMuda</span>
+        <span>Rumusmuda</span>
       </a>
 
       <nav className="nav-links" aria-label="Primary">

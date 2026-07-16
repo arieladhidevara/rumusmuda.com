@@ -3,39 +3,57 @@ import { gsap, REDUCED_MOTION, SCRAMBLE_CHARS } from '../lib/gsap.js';
 
 const WEEKS = [
   {
-    num: 'W.01',
-    title: 'Foundations',
+    num: 'W.00',
+    title: 'Pre-Course',
     desc:
-      'Kenalan dengan LLM, tools, dan cara berpikir agentic. Apa bedanya ' +
-      'chatbot, assistant, dan agent — dan kenapa perbedaan itu penting.',
-    tags: ['LLM basics', 'Prompting', 'Tool use'],
+      'Pengantar vibe coding, AI-assisted development, fundamental agentic AI, ' +
+      'dan perbedaan chatbot dengan AI agent sebelum masuk program utama.',
+    tags: ['Vibe coding', 'Agent basics', 'Readiness'],
+  },
+  {
+    num: 'W.01',
+    title: 'Technical Foundations',
+    desc:
+      'Memahami cara kerja web app: frontend, backend, API, database, terminal, ' +
+      'Git, API keys, deployment, debugging, dan setup OpenClaw dengan aman.',
+    tags: ['Web basics', 'API', 'OpenClaw setup'],
   },
   {
     num: 'W.02',
-    title: 'The Agentic Web',
+    title: 'AI Agent Fundamentals',
     desc:
-      'Teori agentic web: protokol seperti MCP, agent-to-agent ' +
-      'communication, dan bagaimana internet berubah ketika agents ikut ' +
-      'bekerja di dalamnya.',
-    tags: ['MCP', 'Agent-to-agent', 'Orchestration'],
+      'Membedah agent loop, AI models, instructions, tools, skills, memory, ' +
+      'frameworks, integrations, multi-agent systems, dan human approval.',
+    tags: ['Agent loop', 'Tools', 'Security'],
   },
   {
     num: 'W.03',
-    title: 'Build Your Agent',
+    title: 'Agentic Web + Project',
     desc:
-      'Hands-on membangun AI agent dari nol: tool calling, memory, dan ' +
-      'orchestration — sampai agent kamu bisa menyelesaikan tugas nyata.',
-    tags: ['Tool calling', 'Memory', 'Evals'],
+      'Merancang agentic user experience, workflow, arsitektur project, use case, ' +
+      'scope, core workflow, testing, dan iterasi bersama tim.',
+    tags: ['UX', 'Workflow', 'Prototype'],
   },
   {
     num: 'W.04',
-    title: 'Ship & Showcase',
+    title: 'Critique + Final Build',
     desc:
-      'Capstone week. Deploy agent kamu, presentasikan ke komunitas, dan ' +
-      'dapatkan feedback langsung dari praktisi.',
-    tags: ['Capstone', 'Deploy', 'Demo day'],
+      'Presentasi progress, feedback interaktif, troubleshooting teknis, ' +
+      'debugging, integrasi, deployment support, security review, dan persiapan demo.',
+    tags: ['Critique', 'Debugging', 'Deploy'],
+  },
+  {
+    num: 'W.05',
+    title: 'Demo Day',
+    desc:
+      'Final presentation untuk menunjukkan working prototype AI agent yang ' +
+      'berjalan end-to-end, punya input, tool atau integration, output, dan batasan jelas.',
+    tags: ['Final project', 'Demo', 'Feedback'],
   },
 ];
+
+const TOTAL_WEEKS = WEEKS.length;
+const LAST_WEEK_LABEL = WEEKS.at(-1).num.replace('W.', '');
 
 export default function Program() {
   const rootRef = useRef(null);
@@ -54,7 +72,7 @@ export default function Program() {
       const distance = () =>
         Math.max(0, track.scrollWidth - document.documentElement.clientWidth);
 
-      let currentWeek = 1;
+      let currentWeek = 0;
 
       gsap.to(track, {
         x: () => -distance(),
@@ -68,14 +86,17 @@ export default function Program() {
           invalidateOnRefresh: true,
           onUpdate: (self) => {
             gsap.set(barRef.current, { scaleX: self.progress });
-            const week = Math.min(4, 1 + Math.floor(self.progress * 4));
-            if (week !== currentWeek) {
-              currentWeek = week;
+            const weekIndex = Math.min(
+              TOTAL_WEEKS - 1,
+              Math.floor(self.progress * TOTAL_WEEKS)
+            );
+            if (weekIndex !== currentWeek) {
+              currentWeek = weekIndex;
               gsap.to(weekNumRef.current, {
                 duration: 0.5,
                 overwrite: true,
                 scrambleText: {
-                  text: `0${week}`,
+                  text: String(weekIndex).padStart(2, '0'),
                   chars: SCRAMBLE_CHARS,
                   speed: 0.6,
                 },
@@ -101,11 +122,12 @@ export default function Program() {
   return (
     <section className="program" id="program" ref={rootRef}>
       <div className="program-head">
-        <span className="eyebrow">Program 001 — Batch pertama</span>
+        <span className="eyebrow">Program 001 - Batch pertama</span>
         <h2 className="program-title">Human + AI Agent</h2>
         <p className="program-sub">
-          Program 4 minggu untuk memahami agentic web secara menyeluruh — dari
-          teori sampai hands-on membangun dan men-deploy AI agent kamu sendiri.
+          Program project-based untuk memahami fundamental AI agents dan
+          membangun working prototype yang relevan dengan minat, bidang, atau
+          masalah yang ingin kamu eksplorasi.
         </p>
       </div>
 
@@ -126,7 +148,7 @@ export default function Program() {
 
       <div className="program-progress">
         <span className="program-week-label">
-          Week <strong ref={weekNumRef}>01</strong> / 04
+          Week <strong ref={weekNumRef}>00</strong> / {LAST_WEEK_LABEL}
         </span>
         <div className="program-bar">
           <div className="program-bar-fill" ref={barRef} />
