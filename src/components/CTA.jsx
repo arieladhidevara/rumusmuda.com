@@ -29,7 +29,7 @@ export default function CTA() {
 
   return (
     <section className="section cta" id="contact" ref={rootRef}>
-      <span className="eyebrow">Batch pertama - Human + AI Agent</span>
+      <span className="eyebrow">Batch pertama - Human + AI Agents</span>
       <h2 className="cta-title" aria-label={HEADLINE}>
         {HEADLINE.split(' ').map((word, w) => (
           <span key={w}>

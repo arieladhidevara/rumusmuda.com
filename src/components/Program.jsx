@@ -125,7 +125,7 @@ export default function Program() {
     <section className="program" id="program" ref={rootRef}>
       <div className="program-head">
         <span className="eyebrow">Program 001 - Limited to 30 people</span>
-        <h2 className="program-title">Human + AI Agent</h2>
+        <h2 className="program-title">Human + AI Agents</h2>
         <p className="program-sub">
           Cohort kecil untuk 30 peserta yang passionate dan ambitious. Fokusnya
           bukan kuantitas, tapi outcome: memahami AI agents dan membangun
