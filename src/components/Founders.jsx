@@ -7,8 +7,6 @@ const FOUNDERS = [
     name: 'Ariel Adhidevara',
     role: 'Co-founder - Design & Product',
     photo: '/ariel.png',
-    resume:
-      'https://docs.google.com/document/d/145VMg2_7Z8Zx8F_xIPMAdlx7v_s7h48YSK5WL1BWhXA/edit?usp=sharing',
     creds: [
       { degree: 'MDes, Mediums', school: 'Harvard University' },
       { degree: 'B.Arch', school: 'California Polytechnic State University' },
@@ -20,7 +18,6 @@ const FOUNDERS = [
     name: 'Reza Erfit',
     role: 'Co-founder - Community & Data',
     photo: '/reza.png',
-    resume: null,
     creds: [
       { degree: 'Tech creator', school: '400K+ followers on Instagram' },
       { degree: 'B.Sc Data Science', school: 'Universitas Airlangga' },
@@ -83,7 +80,7 @@ export default function Founders() {
         <div className="section-head">
           <span className="eyebrow">Orang di balik Rumusmuda</span>
         </div>
-        {FOUNDERS.map(({ index, name, role, photo, resume, creds }) => (
+        {FOUNDERS.map(({ index, name, role, photo, creds }) => (
           <article className="founder" key={index}>
             <span className="founder-index">{index}</span>
             <div className="founder-photo">
@@ -94,11 +91,6 @@ export default function Founders() {
                 <SplitName text={name} />
               </h3>
               <p className="founder-role">{role}</p>
-              {resume ? (
-                <a className="founder-resume" href={resume} target="_blank" rel="noreferrer">
-                  View resume
-                </a>
-              ) : null}
             </div>
             <ul className="founder-creds">
               {creds.map(({ degree, school }) => (

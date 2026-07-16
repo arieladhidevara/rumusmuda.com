@@ -54,6 +54,8 @@ const WEEKS = [
 
 const TOTAL_WEEKS = WEEKS.length;
 const LAST_WEEK_LABEL = WEEKS.at(-1).num.replace('W.', '');
+const SYLLABUS_URL =
+  'https://docs.google.com/document/d/145VMg2_7Z8Zx8F_xIPMAdlx7v_s7h48YSK5WL1BWhXA/edit?usp=sharing';
 
 export default function Program() {
   const rootRef = useRef(null);
@@ -129,6 +131,9 @@ export default function Program() {
           membangun working prototype yang relevan dengan minat, bidang, atau
           masalah yang ingin kamu eksplorasi.
         </p>
+        <a className="btn program-syllabus" href={SYLLABUS_URL} target="_blank" rel="noreferrer">
+          View Syllabus
+        </a>
       </div>
 
       <div className="program-track" ref={trackRef}>

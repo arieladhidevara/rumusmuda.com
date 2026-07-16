@@ -524,6 +524,12 @@ main {
   max-width: 26rem;
 }
 
+.program-syllabus {
+  align-self: end;
+  grid-column: 2;
+  justify-self: start;
+}
+
 .program-track {
   align-items: stretch;
   display: flex;
@@ -716,20 +722,6 @@ main {
   letter-spacing: 0.16em;
   margin-top: 0.9rem;
   text-transform: uppercase;
-}
-
-.founder-resume {
-  color: var(--cyan);
-  display: inline-flex;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  margin-top: 1rem;
-  text-transform: uppercase;
-}
-
-.founder-resume:hover {
-  color: var(--ink);
 }
 
 .founder-creds {
@@ -1153,6 +1145,10 @@ main {
 
   .program-head {
     grid-template-columns: 1fr;
+  }
+
+  .program-syllabus {
+    grid-column: auto;
   }
 
   .week-card {

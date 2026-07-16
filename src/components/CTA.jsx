@@ -3,6 +3,8 @@ import { gsap, REDUCED_MOTION } from '../lib/gsap.js';
 
 const HEADLINE = 'Learn with us';
 const JOIN_URL = 'https://forms.gle/fJsd7CLZT1XNFcwj6';
+const SYLLABUS_URL =
+  'https://docs.google.com/document/d/145VMg2_7Z8Zx8F_xIPMAdlx7v_s7h48YSK5WL1BWhXA/edit?usp=sharing';
 
 export default function CTA() {
   const rootRef = useRef(null);
@@ -58,6 +60,9 @@ export default function CTA() {
         </a>
         <a className="btn" href="mailto:hello@rumusmuda.com">
           Email us
+        </a>
+        <a className="btn" href={SYLLABUS_URL} target="_blank" rel="noreferrer">
+          View Syllabus
         </a>
       </div>
     </section>
