@@ -1,15 +1,8 @@
 import { useEffect, useRef } from 'react';
-import { gsap, REDUCED_MOTION, SCRAMBLE_CHARS } from '../lib/gsap.js';
+import { gsap, REDUCED_MOTION } from '../lib/gsap.js';
 
 const HEADLINE = 'Build your edge';
 const ACCENT_WORDS = new Set(['edge']);
-
-const META = [
-  { className: 'hero-meta--tl', strong: 'Program 001', label: 'Human + AI Agents' },
-  { className: 'hero-meta--tr', strong: 'Pre-course + 5', label: 'Theory to prototype' },
-  { className: 'hero-meta--bl', strong: '30 seats', label: 'Outcome-first cohort' },
-  { className: 'hero-meta--br', strong: 'Est. 2026', label: 'Indonesia' },
-];
 
 function SplitWords({ text }) {
   return text.split(' ').map((word, w) => (
@@ -42,8 +35,7 @@ export default function Hero({ ready }) {
         rotate: 8,
         transformOrigin: '0% 100%',
       });
-      gsap.set('.hero-inner .eyebrow, .hero-sub, .hero-scroll', { autoAlpha: 0 });
-      gsap.set('.hero-meta', { autoAlpha: 0 });
+      gsap.set('.hero-sub, .hero-scroll', { autoAlpha: 0 });
     }, rootRef);
     return () => ctx.revert();
   }, []);
@@ -55,21 +47,8 @@ export default function Hero({ ready }) {
       const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
 
       tl.to('.hero-title .char', { yPercent: 0, rotate: 0, duration: 1.3, stagger: 0.028 }, 0)
-        .to('.hero-inner .eyebrow', { autoAlpha: 1, duration: 0.8 }, 0.35)
         .to('.hero-sub', { autoAlpha: 1, y: 0, duration: 0.9 }, 0.55)
-        .to('.hero-scroll', { autoAlpha: 1, duration: 0.8 }, 0.9)
-        .to('.hero-meta', { autoAlpha: 1, duration: 0.5, stagger: 0.1 }, 0.6);
-
-      gsap.utils.toArray('.hero-meta strong').forEach((el, i) => {
-        tl.to(
-          el,
-          {
-            duration: 1,
-            scrambleText: { text: el.dataset.text, chars: SCRAMBLE_CHARS, speed: 0.5 },
-          },
-          0.6 + i * 0.1
-        );
-      });
+        .to('.hero-scroll', { autoAlpha: 1, duration: 0.8 }, 0.9);
 
       // Parallax the hero copy away as the user scrolls past it.
       gsap.to('.hero-inner', {
@@ -90,7 +69,6 @@ export default function Hero({ ready }) {
   return (
     <section className="hero" id="top" ref={rootRef}>
       <div className="hero-inner">
-        <span className="eyebrow">Tech literacy for unique expertise</span>
         <h1 className="hero-title" aria-label={HEADLINE}>
           <SplitWords text={HEADLINE} />
         </h1>
@@ -99,13 +77,6 @@ export default function Hero({ ready }) {
           expertise - from creative work to law, research, business, and beyond.
         </p>
       </div>
-
-      {META.map(({ className, strong, label }) => (
-        <div className={`hero-meta ${className}`} key={className}>
-          <strong data-text={strong}>{strong}</strong>
-          {label}
-        </div>
-      ))}
 
       <div className="hero-scroll">Scroll to explore</div>
     </section>
