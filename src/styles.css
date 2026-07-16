@@ -718,6 +718,20 @@ main {
   text-transform: uppercase;
 }
 
+.founder-resume {
+  color: var(--cyan);
+  display: inline-flex;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.founder-resume:hover {
+  color: var(--ink);
+}
+
 .founder-creds {
   align-self: center;
   display: grid;
@@ -945,11 +959,29 @@ main {
   will-change: transform;
 }
 
+.value-mark {
+  align-self: start;
+  display: grid;
+  gap: 1.1rem;
+}
+
 .value-num {
   color: var(--cyan);
   font-family: var(--font-mono);
   font-size: 0.8rem;
   letter-spacing: 0.2em;
+}
+
+.value-icon {
+  color: var(--cyan);
+  filter: drop-shadow(0 0 18px rgba(87, 229, 255, 0.2));
+  fill: none;
+  height: clamp(2.8rem, 5vw, 4.4rem);
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.75;
+  width: clamp(2.8rem, 5vw, 4.4rem);
 }
 
 .value-card h3 {

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap, REDUCED_MOTION } from '../lib/gsap.js';
 
 const HEADLINE = 'Learn with us';
+const JOIN_URL = 'https://forms.gle/fJsd7CLZT1XNFcwj6';
 
 export default function CTA() {
   const rootRef = useRef(null);
@@ -43,16 +44,17 @@ export default function CTA() {
       <p className="cta-copy">
         Kami bukan sekadar brand ed-tech. Kami teachers, engineers, designers,
         dan storytellers - yang percaya generasi muda Indonesia bisa jadi
-        pemain utama di era AI. Daftar dan update batch ada di Instagram.
+        pemain utama di era AI. Daftar Batch 01 lewat form, atau hubungi kami
+        kalau ada pertanyaan.
       </p>
       <div className="cta-actions">
         <a
           className="btn btn--solid"
-          href="https://www.instagram.com/rumusmuda/"
+          href={JOIN_URL}
           target="_blank"
           rel="noreferrer"
         >
-          Follow @rumusmuda
+          Join Batch 01
         </a>
         <a className="btn" href="mailto:hello@rumusmuda.com">
           Email us

@@ -8,6 +8,8 @@ const LINKS = [
   { label: 'Contact', target: '#contact' },
 ];
 
+const JOIN_URL = 'https://forms.gle/fJsd7CLZT1XNFcwj6';
+
 export default function Nav({ ready, onNavigate }) {
   const rootRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
@@ -53,7 +55,7 @@ export default function Nav({ ready, onNavigate }) {
         ))}
       </nav>
 
-      <a className="btn" href="#program" onClick={(e) => handleClick(e, '#program')}>
+      <a className="btn" href={JOIN_URL} target="_blank" rel="noreferrer">
         Join Batch 01
       </a>
     </header>
