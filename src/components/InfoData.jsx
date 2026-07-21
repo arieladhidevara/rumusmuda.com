@@ -8,7 +8,7 @@ const ROWS = [
   { label: 'Origin', value: 'Indonesia' },
   { label: 'Focus', value: 'Tech literacy + human expertise' },
   { label: 'Active program', value: 'Human + AI Agents' },
-  { label: 'Format', value: 'Pre-course + 5 weeks | online | hands-on' },
+  { label: 'Format', value: '5 weeks | online | hands-on' },
   { label: 'Instagram', value: '@rumusmuda', href: IG_URL },
 ];
 

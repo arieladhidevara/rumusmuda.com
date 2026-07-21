@@ -3,14 +3,6 @@ import { gsap, REDUCED_MOTION, SCRAMBLE_CHARS } from '../lib/gsap.js';
 
 const WEEKS = [
   {
-    num: 'W.00',
-    title: 'Pre-Course',
-    desc:
-      'Pengantar vibe coding, AI-assisted development, fundamental agentic AI, ' +
-      'dan perbedaan chatbot dengan AI agent sebelum masuk program utama.',
-    tags: ['Vibe coding', 'Agent basics', 'Readiness'],
-  },
-  {
     num: 'W.01',
     title: 'Technical Foundations',
     desc:

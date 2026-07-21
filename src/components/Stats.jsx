@@ -6,7 +6,7 @@ const STATS = [
     label: 'Durasi program',
     number: '05',
     unit: 'weeks',
-    desc: 'Pre-course, technical foundations, agent fundamentals, project development, final build, dan demo day.',
+    desc: 'Technical foundations, agent fundamentals, project development, final build, dan demo day.',
   },
   {
     label: 'Limited cohort',
