@@ -81,7 +81,7 @@ export default function App() {
     return () => cleanups.forEach((fn) => fn());
   }, [ready]);
 
-  // Subtle UI tick for primary buttons and the hero sound control.
+  // Subtle UI tick only for button-like controls.
   useEffect(() => {
     if (!ready || REDUCED_MOTION) return;
     if (!window.matchMedia('(pointer: fine)').matches) return;
@@ -100,7 +100,7 @@ export default function App() {
       audio.play().catch(() => {});
     };
 
-    const targets = document.querySelectorAll('.btn, .sound-toggle');
+    const targets = document.querySelectorAll('.btn, button:not(:disabled)');
     targets.forEach((target) => target.addEventListener('pointerenter', playHover));
 
     return () => {
